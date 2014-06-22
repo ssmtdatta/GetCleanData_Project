@@ -17,10 +17,11 @@ The data were devided into two groups: training (70% of the data; 7352 examples)
 ABOUT THE SCRIPT: run_analysis.R
 This script reads the test and training data files, extracts and combines desired features and data information and combine them. 
 There are two final outputs:
+1. tidyData: combines mean/std features from test and training sets
+2. tidyAverage: summarizes the average values of mean and std feature for each
+                subject for a given activity.
 
 The script executes the following steps.
-#Step 0. Download script and place in a particular directory. Unless the user provides a directory name, the script by default creates a directory called ProjectDirectory under the current working directory and downloads data in ProjectDirectory.
-****unzipping and user promt***
 
 #Step 1. There are 561 features associated with each test and training case (see the dataset description above). We are interested in only the features that measures mean and standard deviation values. They are suppossedly thet features with 'mean' and 'std' in their names in the "feature.txt" file. Look for those and find out their column ID's (for example, 1st, 21st or 222nd columns?).
           The "feature.txt" file is read using the read.table() command and they are read as characters. Later the grep() command is used to determine with entries macth the strings 'mean' or 'std'. These entries are stored in a vector called 'tidyCols'.
